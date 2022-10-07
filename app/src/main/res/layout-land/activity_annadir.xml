@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AnnadirActivity">
+
+    <TextView
+        android:id="@+id/textViewCantidad2"
+        android:layout_width="180sp"
+        android:layout_height="wrap_content"
+        android:text="@string/CantidadGastada"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.201"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.21" />
+
+    <TextView
+        android:id="@+id/textViewDetalles2"
+        android:layout_width="180sp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="444dp"
+        android:layout_marginBottom="156dp"
+        android:text="@string/DetallesDelGasto"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/textViewCantidad"
+        app:layout_constraintTop_toBottomOf="@+id/textViewCantidad"
+        app:layout_constraintVertical_bias="0.278" />
+
+    <Spinner
+        android:id="@+id/opcionesConceptosDeGasto2"
+        android:layout_width="160sp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="108dp"
+        android:minHeight="48dp"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewConcepto2"
+        app:layout_constraintStart_toEndOf="@+id/textViewConcepto2"
+        app:layout_constraintTop_toTopOf="@+id/textViewConcepto2"
+        app:layout_constraintVertical_bias="0.476"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <EditText
+        android:id="@+id/editTextCantidad2"
+        android:layout_width="160sp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="108dp"
+        android:ems="10"
+        android:hint="@string/CantidadAnnadir"
+        android:inputType="numberPassword"
+        android:minHeight="48dp"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewCantidad2"
+        app:layout_constraintStart_toEndOf="@+id/textViewCantidad2"
+        app:layout_constraintTop_toTopOf="@+id/textViewCantidad2"
+        app:layout_constraintVertical_bias="0.523" />
+
+    <TextView
+        android:id="@+id/textViewConcepto2"
+        android:layout_width="180sp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="440dp"
+        android:layout_marginBottom="224dp"
+        android:text="@string/ConceptoDelGasto"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/textViewCantidad"
+        app:layout_constraintTop_toBottomOf="@+id/textViewCantidad"
+        app:layout_constraintVertical_bias="0.13" />
+
+    <EditText
+        android:id="@+id/editTextDescripcion2"
+        android:layout_width="162dp"
+        android:layout_height="49dp"
+        android:layout_marginStart="112dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewDetalles2"
+        app:layout_constraintStart_toEndOf="@+id/textViewDetalles2"
+        app:layout_constraintTop_toTopOf="@+id/textViewDetalles2"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <Button
+        android:id="@+id/buttonAnnadir3"
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="176dp"
+        android:layout_marginBottom="52dp"
+        android:text="@string/Añadir"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/editTextDescripcion2"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/editTextDescripcion2"
+        app:layout_constraintTop_toTopOf="@+id/textViewCantidad"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/buttonVolver6"
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="296dp"
+        android:text="@string/volver"
+        app:layout_constraintBottom_toBottomOf="@+id/buttonAnnadir3"
+        app:layout_constraintEnd_toEndOf="@+id/textViewDetalles2"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/textViewDetalles2"
+        app:layout_constraintTop_toTopOf="@+id/textViewCantidad" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AnnadirActivity">
+
+    <TextView
+        android:id="@+id/textViewDetalles"
+        android:layout_width="180sp"
+        android:layout_height="wrap_content"
+        android:text="@string/DetallesDelGasto"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/textViewCantidad"
+        app:layout_constraintTop_toBottomOf="@+id/textViewCantidad"
+        app:layout_constraintVertical_bias="0.278" />
+
+    <Button
+        android:id="@+id/buttonAnnadir2"
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="176dp"
+        android:text="@string/Añadir"
+        app:layout_constraintBottom_toBottomOf="@+id/buttonVolver3"
+        app:layout_constraintStart_toStartOf="@+id/opcionesConceptosDeGasto"
+        app:layout_constraintTop_toTopOf="@+id/textViewCantidad"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/buttonVolver3"
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="296dp"
+        android:text="@string/volver"
+        app:layout_constraintStart_toStartOf="@+id/textViewCantidad"
+        app:layout_constraintTop_toTopOf="@+id/textViewCantidad" />
+
+    <Spinner
+        android:id="@+id/opcionesConceptosDeGasto"
+        android:layout_width="160sp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:minHeight="48dp"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewConcepto"
+        app:layout_constraintStart_toEndOf="@+id/textViewConcepto"
+        app:layout_constraintTop_toTopOf="@+id/textViewConcepto"
+        app:layout_constraintVertical_bias="0.476"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <TextView
+        android:id="@+id/textViewConcepto"
+        android:layout_width="180sp"
+        android:layout_height="wrap_content"
+        android:text="@string/ConceptoDelGasto"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/textViewCantidad"
+        app:layout_constraintTop_toBottomOf="@+id/textViewCantidad"
+        app:layout_constraintVertical_bias="0.13" />
+
+    <TextView
+        android:id="@+id/textViewCantidad"
+        android:layout_width="180sp"
+        android:layout_height="wrap_content"
+        android:text="@string/CantidadGastada"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.116"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.107" />
+
+    <EditText
+        android:id="@+id/editTextCantidad"
+        android:layout_width="160sp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:ems="10"
+        android:hint="@string/CantidadAnnadir"
+        android:inputType="numberPassword"
+        android:minHeight="48dp"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewCantidad"
+        app:layout_constraintStart_toEndOf="@+id/textViewCantidad"
+        app:layout_constraintTop_toTopOf="@+id/textViewCantidad" />
+
+    <EditText
+        android:id="@+id/editTextDescripcion"
+        android:layout_width="162dp"
+        android:layout_height="49dp"
+        android:layout_marginStart="16dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewDetalles"
+        app:layout_constraintStart_toEndOf="@+id/textViewDetalles"
+        app:layout_constraintTop_toTopOf="@+id/textViewDetalles"
+        tools:ignore="SpeakableTextPresentCheck" />
+</androidx.constraintlayout.widget.ConstraintLayout>
