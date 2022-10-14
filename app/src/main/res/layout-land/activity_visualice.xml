@@ -4,7 +4,38 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@android:color/holo_orange_light"
     tools:context=".VisualiceActivity">
+
+    <Button
+        android:id="@+id/botonBorrar2"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="188dp"
+        android:background="#3F51B5"
+        android:text="@string/Borrar"
+        app:icon="@android:drawable/ic_menu_delete"
+        app:layout_constraintBottom_toBottomOf="@+id/button"
+        app:layout_constraintEnd_toEndOf="@+id/button2"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/botonCambio2"
+        app:layout_constraintTop_toTopOf="@+id/button"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="208dp"
+        android:background="#3F51B5"
+        android:text="@string/Modificar"
+        app:icon="@android:drawable/ic_menu_edit"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/listaGastos"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.688" />
 
     <ListView
         android:id="@+id/listaGastos"
@@ -24,6 +55,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="112dp"
         android:text="TextView"
+        android:textColor="#FFFFFF"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/listaGastos"
@@ -50,13 +82,14 @@
         android:id="@+id/botonCambio2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="556dp"
-        android:layout_marginBottom="88dp"
+        android:layout_marginEnd="552dp"
+        android:layout_marginBottom="40dp"
+        android:background="#3F51B5"
         android:text="cambio"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/textViewNuevaFecha5"
+        app:layout_constraintStart_toStartOf="@+id/button"
         app:layout_constraintTop_toBottomOf="@+id/textViewNuevaFecha5"
         app:layout_constraintVertical_bias="0.484" />
 
@@ -65,6 +98,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/gastos"
+        android:textColor="#FFFFFF"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -81,6 +115,7 @@
         android:layout_marginEnd="276dp"
         android:layout_marginBottom="220dp"
         android:text="@string/cambiar"
+        android:textColor="#FFFFFF"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/listaGastos"
@@ -105,12 +140,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="204dp"
-        android:layout_marginEnd="156dp"
-        android:layout_marginBottom="88dp"
+        android:background="#3F51B5"
         android:text="@string/volver"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/listaGastos"
-        app:layout_constraintStart_toStartOf="@+id/textView6"
+        app:layout_constraintBottom_toBottomOf="@+id/botonCambio2"
+        app:layout_constraintEnd_toEndOf="@+id/botonBorrar2"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/botonBorrar2"
         app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@android:color/holo_orange_light"
     tools:context=".MenuActivity">
 
     <TextView
@@ -11,6 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Estas dentro"
+        android:textColor="#FFFFFF"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -25,6 +27,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:text="@string/VisualizarGastos"
+        app:icon="@android:drawable/ic_menu_gallery"
         app:layout_constraintStart_toStartOf="@+id/NombreU"
         app:layout_constraintTop_toBottomOf="@+id/NombreU" />
 
@@ -33,6 +36,7 @@
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:text="Cerrar sesion"
+        app:icon="?attr/actionModeCloseDrawable"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/buttonAnnadir"
         app:layout_constraintHorizontal_bias="1.0"
@@ -46,6 +50,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:text="@string/AñadirGastos"
+        app:icon="@android:drawable/ic_menu_add"
         app:layout_constraintEnd_toEndOf="@+id/buttonVisualizar"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/buttonVisualizar"
@@ -57,6 +62,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="44dp"
         android:text="TextView"
+        android:textColor="#FFFFFF"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="@+id/NombreU"
         app:layout_constraintStart_toEndOf="@+id/NombreU"

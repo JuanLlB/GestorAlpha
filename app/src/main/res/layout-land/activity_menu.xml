@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@android:color/holo_orange_light"
     tools:context=".MenuActivity">
 
     <TextView
@@ -11,6 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Estas dentro"
+        android:textColor="#FFFFFF"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -24,6 +26,7 @@
         android:layout_width="230dp"
         android:layout_height="wrap_content"
         android:text="Cerrar sesion"
+        app:icon="?attr/actionModeCloseDrawable"
         app:layout_constraintBottom_toBottomOf="@+id/buttonAnnadir"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.141"
@@ -36,6 +39,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/gastos"
+        android:textColor="#FFFFFF"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -50,6 +54,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="68dp"
         android:text="Cifra"
+        android:textColor="#FFFFFF"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="@+id/textViewGastos"
         app:layout_constraintStart_toEndOf="@+id/textViewGastos"
@@ -60,9 +65,10 @@
         android:id="@+id/buttonVisualizar"
         android:layout_width="230dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="136dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="16dp"
         android:text="@string/VisualizarGastos"
+        app:icon="@android:drawable/ic_menu_gallery"
         app:layout_constraintStart_toStartOf="@+id/textViewGastos"
         app:layout_constraintTop_toBottomOf="@+id/buttonCambiar" />
 
@@ -73,6 +79,7 @@
         android:layout_marginStart="4dp"
         android:layout_marginTop="12dp"
         android:text="@string/AñadirGastos"
+        app:icon="@android:drawable/ic_menu_add"
         app:layout_constraintStart_toStartOf="@+id/textViewGastos"
         app:layout_constraintTop_toBottomOf="@+id/buttonVisualizar" />
 
@@ -83,6 +90,7 @@
         android:layout_marginStart="4dp"
         android:layout_marginTop="40dp"
         android:text="@string/cambiar"
+        android:textColor="#FFFFFF"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="@+id/textViewGastos"
         app:layout_constraintTop_toBottomOf="@+id/textViewGastos" />
@@ -117,6 +125,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:text="@string/Cambiar"
+        app:icon="@android:drawable/ic_menu_rotate"
         app:layout_constraintStart_toStartOf="@+id/textViewNuevaFecha"
         app:layout_constraintTop_toBottomOf="@+id/textViewNuevaFecha" />
 
@@ -126,6 +135,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="92dp"
         android:text="TextView"
+        android:textColor="#FFFFFF"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="@+id/NombreU"
         app:layout_constraintStart_toEndOf="@+id/NombreU"

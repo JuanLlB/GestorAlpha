@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@android:color/holo_orange_light"
     tools:context=".VisualiceActivity">
 
     <TextView
@@ -13,6 +14,7 @@
         android:layout_marginTop="56dp"
         android:layout_marginBottom="548dp"
         android:text="@string/cambiar"
+        android:textColor="#FFFFFF"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/listaGastos"
@@ -38,6 +40,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="352dp"
         android:text="TextView"
+        android:textColor="#FFFFFF"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/listaGastos"
@@ -48,13 +51,14 @@
 
     <Button
         android:id="@+id/botonCambio"
-        android:layout_width="130dp"
+        android:layout_width="160dp"
         android:layout_height="wrap_content"
+        android:background="#3F51B5"
         android:text="cambio"
         app:layout_constraintBottom_toTopOf="@+id/textView6"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/textViewNuevaFecha5"
+        app:layout_constraintStart_toStartOf="@+id/textView6"
         app:layout_constraintTop_toBottomOf="@+id/textViewNuevaFecha5"
         app:layout_constraintVertical_bias="0.484" />
 
@@ -62,7 +66,7 @@
         android:id="@+id/listaGastos"
         android:layout_width="213dp"
         android:layout_height="496dp"
-        android:layout_marginStart="12dp"
+        android:layout_marginStart="36dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView6"
         app:layout_constraintTop_toTopOf="parent"
@@ -70,22 +74,25 @@
 
     <Button
         android:id="@+id/buttonVolver2"
-        android:layout_width="130dp"
+        android:layout_width="160dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="208dp"
+        android:background="#3F51B5"
         android:text="@string/volver"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/botonBorrar"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/botonBorrar"
         app:layout_constraintTop_toBottomOf="@+id/textView6"
-        app:layout_constraintVertical_bias="0.266" />
+        app:layout_constraintVertical_bias="0.102" />
 
     <Button
         android:id="@+id/botonBorrar"
-        android:layout_width="130dp"
+        android:layout_width="160dp"
         android:layout_height="wrap_content"
+        android:background="#3F51B5"
         android:text="@string/Borrar"
+        app:icon="@android:drawable/ic_menu_delete"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/button2"
         app:layout_constraintHorizontal_bias="0.0"
@@ -98,13 +105,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/gastos"
+        android:textColor="#FFFFFF"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.117"
+        app:layout_constraintHorizontal_bias="0.025"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewNuevaFecha5"
-        app:layout_constraintVertical_bias="0.155" />
+        app:layout_constraintVertical_bias="0.172" />
 
     <Spinner
         android:id="@+id/opcionesMes2"
@@ -120,9 +128,11 @@
 
     <Button
         android:id="@+id/button2"
-        android:layout_width="130dp"
+        android:layout_width="160dp"
         android:layout_height="wrap_content"
+        android:background="#3F51B5"
         android:text="@string/Modificar"
+        app:icon="@android:drawable/ic_menu_edit"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/listaGastos"
         app:layout_constraintHorizontal_bias="0.0"
