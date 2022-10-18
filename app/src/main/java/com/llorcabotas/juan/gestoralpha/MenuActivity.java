@@ -8,8 +8,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 
+import modelo.Gasto;
 import modelo.Usuario;
 
 public class MenuActivity extends AppCompatActivity {
@@ -27,6 +29,7 @@ public class MenuActivity extends AppCompatActivity {
         //Establece el usuario a partir del que invocaste con el email y la contraseña
         try {
             u = (Usuario) bundle.getSerializable("usuario");
+
         }
         catch (Exception e){
             u=null;
@@ -36,11 +39,14 @@ public class MenuActivity extends AppCompatActivity {
             TextView tnu=(TextView) findViewById(R.id.NombreU);
             tnu.setText(u.getNombre());
         }
+
         TextView tfa=(TextView) findViewById(R.id.fechaActual);
         month=fijarMes(Calendar.getInstance().get(Calendar.MONTH));
         year=String.valueOf(Calendar.getInstance().get(Calendar.YEAR));
         tfa.setText(month+"/"+year);
-
+        ArrayList<Gasto> gastos= (ArrayList<Gasto>) new  controladores.CargarResumenMes().run(u,
+                Calendar.getInstance().get(Calendar.MONTH),
+                Calendar.getInstance().get(Calendar.YEAR));
         //Te devuelve al comienzo
         Button bcs=(Button) findViewById(R.id.buttonCerrarSesion);
         bcs.setOnClickListener(new View.OnClickListener() {
