@@ -56,15 +56,23 @@ public class MainActivity extends AppCompatActivity {
         bl.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mAuth = FirebaseAuth.getInstance();
+                //mAuth = FirebaseAuth.getInstance();
                 /*
                 Código para facilitar las pruebas al no tener que meter el usuario
                 email="benjullb@gmail.com";
                 contra="Benju2001";
                 */
                 //Establece las variables de email y contraseña como los text views
-                email = nombre.getText().toString();
-                contra = contrasenna.getText().toString();
+                //email = nombre.getText().toString();
+                //contra = contrasenna.getText().toString();
+                email="benjullb@gmail.com";
+                contra="Benju2001";
+                Intent i = new Intent(MainActivity.this, MenuActivity.class);
+
+                i.putExtra("usuario", new Usuario(email,contra, "AAA"));
+                startActivity(i);
+                finish();
+                 /*
                 //Compruba que en efecto los text views no estan vacios antes de revisarlos
                 if (!email.equals("") && !contra.equals("")) {
                     //Buscamos un usuario en firebaso a potir del email y la contraseña
@@ -101,6 +109,8 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(MainActivity.this, "Email y contraseña necesarios.",
                             Toast.LENGTH_SHORT).show();
                 }
+
+                  */
             }
         });
 

@@ -12,7 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Estas dentro"
-        android:textColor="#FFFFFF"
+        android:textColor="@color/letters"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -34,100 +34,35 @@
         app:layout_constraintTop_toTopOf="@+id/buttonAnnadir"
         app:layout_constraintVertical_bias="0.0" />
 
-    <TextView
-        android:id="@+id/textViewGastos"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/gastos"
-        android:textColor="#FFFFFF"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.092"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.122" />
-
-    <TextView
-        android:id="@+id/listaGastos"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="68dp"
-        android:text="Cifra"
-        android:textColor="#FFFFFF"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="@+id/textViewGastos"
-        app:layout_constraintStart_toEndOf="@+id/textViewGastos"
-        app:layout_constraintTop_toTopOf="@+id/textViewGastos"
-        app:layout_constraintVertical_bias="0.0" />
-
     <Button
         android:id="@+id/buttonVisualizar"
         android:layout_width="230dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
         android:layout_marginTop="16dp"
         android:text="@string/VisualizarGastos"
         app:icon="@android:drawable/ic_menu_gallery"
-        app:layout_constraintStart_toStartOf="@+id/textViewGastos"
+        app:layout_constraintStart_toStartOf="@+id/buttonCambiar"
         app:layout_constraintTop_toBottomOf="@+id/buttonCambiar" />
 
     <Button
         android:id="@+id/buttonAnnadir"
         android:layout_width="230dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
         android:layout_marginTop="12dp"
         android:text="@string/AñadirGastos"
         app:icon="@android:drawable/ic_menu_add"
-        app:layout_constraintStart_toStartOf="@+id/textViewGastos"
+        app:layout_constraintStart_toStartOf="@+id/buttonVisualizar"
         app:layout_constraintTop_toBottomOf="@+id/buttonVisualizar" />
-
-    <TextView
-        android:id="@+id/textViewNuevaFecha"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="40dp"
-        android:text="@string/cambiar"
-        android:textColor="#FFFFFF"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="@+id/textViewGastos"
-        app:layout_constraintTop_toBottomOf="@+id/textViewGastos" />
-
-    <Spinner
-        android:id="@+id/opcionesMes"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:minHeight="48dp"
-        app:layout_constraintBottom_toBottomOf="@+id/textViewNuevaFecha"
-        app:layout_constraintStart_toEndOf="@+id/textViewNuevaFecha"
-        app:layout_constraintTop_toTopOf="@+id/textViewNuevaFecha"
-        app:layout_constraintVertical_bias="0.476"
-        tools:ignore="SpeakableTextPresentCheck" />
-
-    <Spinner
-        android:id="@+id/opcionesAño"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:minHeight="48dp"
-        app:layout_constraintBottom_toBottomOf="@+id/textViewNuevaFecha"
-        app:layout_constraintStart_toEndOf="@+id/opcionesMes"
-        app:layout_constraintTop_toTopOf="@+id/textViewNuevaFecha"
-        app:layout_constraintVertical_bias="0.476"
-        tools:ignore="SpeakableTextPresentCheck" />
 
     <Button
         android:id="@+id/buttonCambiar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="88dp"
         android:text="@string/Cambiar"
         app:icon="@android:drawable/ic_menu_rotate"
-        app:layout_constraintStart_toStartOf="@+id/textViewNuevaFecha"
-        app:layout_constraintTop_toBottomOf="@+id/textViewNuevaFecha" />
+        app:layout_constraintStart_toStartOf="@+id/NombreU"
+        app:layout_constraintTop_toBottomOf="@+id/NombreU" />
 
     <TextView
         android:id="@+id/fechaActual"
@@ -135,7 +70,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="92dp"
         android:text="TextView"
-        android:textColor="#FFFFFF"
+        android:textColor="@color/letters"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="@+id/NombreU"
         app:layout_constraintStart_toEndOf="@+id/NombreU"

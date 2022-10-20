@@ -23,7 +23,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="@string/nombre" />
+            android:text="@string/nombre"
+            android:textColor="@color/letters" />
 
         <EditText
             android:id="@+id/editTextMainNombre"
@@ -33,6 +34,7 @@
             android:ems="10"
             android:hint="@string/nombreHint"
             android:inputType="textPersonName"
+            android:textColor="@color/letters"
             tools:ignore="TouchTargetSizeCheck" />
 
     </LinearLayout>
@@ -49,7 +51,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="@string/password" />
+            android:text="@string/password"
+            android:textColor="@color/letters" />
 
         <EditText
             android:id="@+id/editPassword"
@@ -59,6 +62,7 @@
             android:ems="10"
             android:hint="Mete la contraseña"
             android:inputType="textPassword"
+            android:textColor="@color/letters"
             tools:ignore="TouchTargetSizeCheck" />
 
     </LinearLayout>
