@@ -38,7 +38,7 @@
         app:layout_constraintVertical_bias="0.278" />
 
     <Spinner
-        android:id="@+id/opcionesConceptosDeGasto2"
+        android:id="@+id/opcionesConceptosDeGasto"
         android:layout_width="160sp"
         android:layout_height="wrap_content"
         android:layout_marginStart="108dp"
@@ -94,7 +94,7 @@
         tools:ignore="SpeakableTextPresentCheck" />
 
     <Button
-        android:id="@+id/buttonAnnadir3"
+        android:id="@+id/buttonAnnadir2"
         android:layout_width="130dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
@@ -110,13 +110,13 @@
         app:layout_constraintVertical_bias="1.0" />
 
     <Button
-        android:id="@+id/buttonVolver6"
+        android:id="@+id/buttonVolver3"
         android:layout_width="130dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="296dp"
         android:background="#3F51B5"
         android:text="@string/volver"
-        app:layout_constraintBottom_toBottomOf="@+id/buttonAnnadir3"
+        app:layout_constraintBottom_toBottomOf="@+id/buttonAnnadir2"
         app:layout_constraintEnd_toEndOf="@+id/textViewDetalles2"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/textViewDetalles2"

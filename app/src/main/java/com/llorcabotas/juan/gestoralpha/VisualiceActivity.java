@@ -14,7 +14,6 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Date;
 import java.util.List;
 
 import controladores.ObtenerAñosConGasto;
@@ -24,8 +23,8 @@ import modelo.Usuario;
 
 public class VisualiceActivity extends AppCompatActivity {
 
-    Spinner spinnerM, spinnerA;
-    String month, year;
+    Spinner spinnerD, spinnerM, spinnerA;
+    String day, month, year;
     int seleccion;
     ListView listView;
     Usuario u;
@@ -55,6 +54,7 @@ public class VisualiceActivity extends AppCompatActivity {
 
         List<String> m2=rellenarMeses();
         List<String> a=rellenarAnnos();
+        List<String> d=rellenarDias();
         // Creación de adapter para spinner
         ArrayAdapter<String> myAdapterM = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, m2);
 
@@ -67,8 +67,9 @@ public class VisualiceActivity extends AppCompatActivity {
         // Define estilo
         myAdapterA.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
+        spinnerD=(Spinner) findViewById(R.id.opcionesDia);
         spinnerM=(Spinner) findViewById(R.id.opcionesMes2);
-        spinnerA=(Spinner) findViewById(R.id.opcionesAño2);
+        spinnerA=(Spinner) findViewById(R.id.opcionesAño);
         // Adjunta datos del adapter al spinner
         spinnerM.setAdapter(myAdapterM);
 
@@ -110,6 +111,7 @@ public class VisualiceActivity extends AppCompatActivity {
             public void onClick(View v) {
                 month=spinnerM.getSelectedItem().toString();
                 year=spinnerA.getSelectedItem().toString();
+                day=spinnerD.getSelectedItem().toString();
 
                 tfa.setText(month+"/"+year);
                 rellenarListaGastos();
@@ -129,6 +131,38 @@ public class VisualiceActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    //Mete los días del mes en el spinner
+    private List<String> rellenarDias() {
+        ArrayList<String> dias = new ObtenerAñosConGasto().ejecutar();
+        String item=spinnerM.getSelectedItem().toString();
+        if (item.equals("Enero") || item.equals("Marzo") || item.equals("Mayo") || item.equals("Julio") || item.equals("Agosto") || item.equals("Octubre") || item.equals("Diciembre")){
+            dias.add("na");
+            for (int i=0; i<=31; i++){
+                dias.add(i+"");
+            }
+        }else if (item.equals("Abril") || item.equals("Junio") || item.equals("Septiembre") || item.equals("Noviembre")){
+            dias.add("na");
+            for (int i=0; i<=30; i++){
+                dias.add(i+"");
+            }
+        }else if (item.equals("Febrero")){
+            item=spinnerA.getSelectedItem().toString();
+            if (Integer.parseInt(item)%4==0){
+                dias.add("na");
+                for (int i=0; i<=29; i++){
+                    dias.add(i+"");
+                }
+            }else{
+                dias.add("na");
+                for (int i=0; i<=28; i++){
+                    dias.add(i+"");
+                }
+            }
+        }
+
+        return dias;
     }
 
     //Te da una lista con todos los meses para insertar en el spinner

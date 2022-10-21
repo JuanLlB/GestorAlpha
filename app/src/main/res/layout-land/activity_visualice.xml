@@ -7,6 +7,17 @@
     android:background="@android:color/holo_orange_light"
     tools:context=".VisualiceActivity">
 
+    <Spinner
+        android:id="@+id/opcionesDia"
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:minHeight="48dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/textViewNuevaFecha2"
+        app:layout_constraintTop_toBottomOf="@+id/textViewNuevaFecha2"
+        app:layout_constraintVertical_bias="0.107"
+        tools:ignore="SpeakableTextPresentCheck" />
+
     <Button
         android:id="@+id/botonBorrar"
         android:layout_width="160dp"
@@ -66,15 +77,14 @@
 
     <Spinner
         android:id="@+id/opcionesMes2"
-        android:layout_width="100dp"
+        android:layout_width="110dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="232dp"
         android:minHeight="48dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/opcionesDia"
         app:layout_constraintEnd_toStartOf="@+id/listaGastos"
-        app:layout_constraintHorizontal_bias="0.159"
-        app:layout_constraintStart_toEndOf="@+id/textViewNuevaFecha2"
-        app:layout_constraintTop_toTopOf="@+id/textViewNuevaFecha2"
+        app:layout_constraintHorizontal_bias="0.093"
+        app:layout_constraintStart_toEndOf="@+id/opcionesDia"
+        app:layout_constraintTop_toTopOf="@+id/opcionesDia"
         app:layout_constraintVertical_bias="0.0"
         tools:ignore="SpeakableTextPresentCheck" />
 
@@ -113,21 +123,21 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="56dp"
         android:layout_marginEnd="276dp"
-        android:layout_marginBottom="220dp"
+        android:layout_marginBottom="252dp"
         android:text="@string/cambiar"
         android:textColor="@color/letters"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/listaGastos"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/textView4"
         app:layout_constraintTop_toBottomOf="@+id/textViewGastos" />
 
     <Spinner
-        android:id="@+id/opcionesAño2"
-        android:layout_width="100dp"
+        android:id="@+id/opcionesAño"
+        android:layout_width="110dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
+        android:layout_marginStart="12dp"
         android:minHeight="48dp"
         app:layout_constraintBottom_toBottomOf="@+id/opcionesMes2"
         app:layout_constraintStart_toEndOf="@+id/opcionesMes2"
