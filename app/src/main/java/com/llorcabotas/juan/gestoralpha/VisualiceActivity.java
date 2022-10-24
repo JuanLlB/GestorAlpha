@@ -50,11 +50,18 @@ public class VisualiceActivity extends AppCompatActivity {
         TextView tfa=(TextView) findViewById(R.id.fechaActual2);
         month=fijarMes(Calendar.getInstance().get(Calendar.MONTH));
         year=String.valueOf(Calendar.getInstance().get(Calendar.YEAR));
+        day="na";
         tfa.setText(month+"/"+year);
 
         List<String> m2=rellenarMeses();
         List<String> a=rellenarAnnos();
         List<String> d=rellenarDias();
+        // Creación de adapter para spinner
+        ArrayAdapter<String> myAdapterD = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, d);
+
+        // Define estilo
+        myAdapterD.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
         // Creación de adapter para spinner
         ArrayAdapter<String> myAdapterM = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, m2);
 
@@ -71,6 +78,8 @@ public class VisualiceActivity extends AppCompatActivity {
         spinnerM=(Spinner) findViewById(R.id.opcionesMes2);
         spinnerA=(Spinner) findViewById(R.id.opcionesAño);
         // Adjunta datos del adapter al spinner
+        spinnerD.setAdapter(myAdapterD);
+
         spinnerM.setAdapter(myAdapterM);
 
         spinnerA.setAdapter(myAdapterA);
@@ -135,8 +144,9 @@ public class VisualiceActivity extends AppCompatActivity {
 
     //Mete los días del mes en el spinner
     private List<String> rellenarDias() {
-        ArrayList<String> dias = new ObtenerAñosConGasto().ejecutar();
-        String item=spinnerM.getSelectedItem().toString();
+        //ArrayList<String> dias = new ObtenerAñosConGasto().ejecutar();
+        ArrayList<String> dias = new ArrayList<String>();
+        String item=month;
         if (item.equals("Enero") || item.equals("Marzo") || item.equals("Mayo") || item.equals("Julio") || item.equals("Agosto") || item.equals("Octubre") || item.equals("Diciembre")){
             dias.add("na");
             for (int i=0; i<=31; i++){
@@ -148,7 +158,7 @@ public class VisualiceActivity extends AppCompatActivity {
                 dias.add(i+"");
             }
         }else if (item.equals("Febrero")){
-            item=spinnerA.getSelectedItem().toString();
+            item=year;
             if (Integer.parseInt(item)%4==0){
                 dias.add("na");
                 for (int i=0; i<=29; i++){
@@ -227,7 +237,11 @@ public class VisualiceActivity extends AppCompatActivity {
         try {
             String aux=u.getId();
 
-            gastos=bd.obtenerGasto(aux,this.month,this.year);
+            if (this.day=="na"){
+                gastos=bd.obtenerGasto(aux,this.month,this.year);
+            }else{
+                gastos=bd.obtenerGasto(aux,this.day,this.month,this.year);
+            }
         }
         catch (Exception e){
             gastos=null;

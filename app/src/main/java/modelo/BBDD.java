@@ -149,6 +149,44 @@ public class BBDD extends SQLiteOpenHelper {
         return gastos;
     }
 
+
+    public ArrayList<Gasto> obtenerGasto(String id_usuario,String dia, String mes,String año) {
+
+        ArrayList<Gasto> gastos = new ArrayList<Gasto>();
+        String diaNumero=numero(dia);
+        String mesNumero=numero(mes);
+        String mesAño=numeroAño(año);
+        String sentenciaSql = "SELECT _id,cantidad,concepto,descripcion,dia" +
+                " FROM " + NOMBRE_TABLA_GASTOS +
+                " WHERE id_usario = '"+id_usuario+"'"
+                +" AND anyo='"+mesAño+"'"
+                +" AND mes='"+mesNumero+"'"
+                +" AND dia='"+diaNumero+"'";
+        Cursor c=null;
+        try {
+            c = bd.rawQuery(sentenciaSql, null);
+        }
+        catch (Exception e){
+            return null;
+        }
+        if (c != null && c.getCount() > 0) {
+            c.moveToFirst();
+            do {
+                int id = c.getInt(c.getColumnIndexOrThrow("_id"));
+
+
+                String cantidad = c.getString(c.getColumnIndexOrThrow("cantidad"));
+                String concepto = c.getString(c.getColumnIndexOrThrow("concepto"));
+
+                String descripcion = c.getString(c.getColumnIndexOrThrow("descripcion"));
+                Gasto gasto = new Gasto(id, id_usuario, Double.parseDouble(cantidad), concepto, mes,año,dia, descripcion);
+                gastos.add(gasto);
+            } while (c.moveToNext());
+        }
+        c.close();
+        return gastos;
+    }
+
     private String numeroAño(String año) {
 
         try{
