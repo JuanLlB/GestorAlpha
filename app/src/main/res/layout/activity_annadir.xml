@@ -7,6 +7,73 @@
     android:background="@android:color/holo_orange_light"
     tools:context=".AnnadirActivity">
 
+    <Spinner
+        android:id="@+id/opcionesDiaC"
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="284dp"
+        android:minHeight="48dp"
+        app:layout_constraintBottom_toTopOf="@+id/buttonVolver3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/textViewNuevaFecha5"
+        app:layout_constraintTop_toBottomOf="@+id/textViewDetalles3"
+        app:layout_constraintVertical_bias="0.539"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <Spinner
+        android:id="@+id/opcionesAñoC"
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="28dp"
+        android:minHeight="48dp"
+        app:layout_constraintBottom_toBottomOf="@+id/opcionesMesC"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.333"
+        app:layout_constraintStart_toEndOf="@+id/opcionesMesC"
+        app:layout_constraintTop_toTopOf="@+id/opcionesMesC"
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <Spinner
+        android:id="@+id/opcionesMesC"
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:minHeight="48dp"
+        app:layout_constraintBottom_toBottomOf="@+id/opcionesDiaC"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.051"
+        app:layout_constraintStart_toEndOf="@+id/opcionesDiaC"
+        app:layout_constraintTop_toTopOf="@+id/opcionesDiaC"
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <TextView
+        android:id="@+id/textViewDetalles3"
+        android:layout_width="180sp"
+        android:layout_height="wrap_content"
+        android:text="@string/FechaM"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/textViewCantidad"
+        app:layout_constraintTop_toBottomOf="@+id/textViewDetalles"
+        app:layout_constraintVertical_bias="0.092" />
+
+    <Button
+        android:id="@+id/buttonFechaM"
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="224dp"
+        android:background="#3F51B5"
+        android:text="@string/Activar"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewDetalles3"
+        app:layout_constraintEnd_toEndOf="@+id/buttonAnnadir2"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/buttonAnnadir2"
+        app:layout_constraintTop_toTopOf="@+id/textViewCantidad" />
+
     <TextView
         android:id="@+id/textViewDetalles"
         android:layout_width="180sp"
@@ -18,8 +85,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/textViewCantidad"
-        app:layout_constraintTop_toBottomOf="@+id/textViewCantidad"
-        app:layout_constraintVertical_bias="0.278" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewConcepto"
+        app:layout_constraintVertical_bias="0.1" />
 
     <Button
         android:id="@+id/buttonAnnadir2"
@@ -39,7 +106,7 @@
         android:layout_width="130dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="296dp"
+        android:layout_marginTop="396dp"
         android:background="#3F51B5"
         android:text="@string/volver"
         app:layout_constraintStart_toStartOf="@+id/textViewCantidad"
@@ -69,7 +136,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/textViewCantidad"
         app:layout_constraintTop_toBottomOf="@+id/textViewCantidad"
-        app:layout_constraintVertical_bias="0.13" />
+        app:layout_constraintVertical_bias="0.081" />
 
     <TextView
         android:id="@+id/textViewCantidad"

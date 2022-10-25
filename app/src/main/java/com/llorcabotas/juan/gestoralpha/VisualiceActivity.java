@@ -149,24 +149,24 @@ public class VisualiceActivity extends AppCompatActivity {
         String item=month;
         if (item.equals("Enero") || item.equals("Marzo") || item.equals("Mayo") || item.equals("Julio") || item.equals("Agosto") || item.equals("Octubre") || item.equals("Diciembre")){
             dias.add("na");
-            for (int i=0; i<=31; i++){
+            for (int i=1; i<=31; i++){
                 dias.add(i+"");
             }
         }else if (item.equals("Abril") || item.equals("Junio") || item.equals("Septiembre") || item.equals("Noviembre")){
             dias.add("na");
-            for (int i=0; i<=30; i++){
+            for (int i=1; i<=30; i++){
                 dias.add(i+"");
             }
         }else if (item.equals("Febrero")){
             item=year;
             if (Integer.parseInt(item)%4==0){
                 dias.add("na");
-                for (int i=0; i<=29; i++){
+                for (int i=1; i<=29; i++){
                     dias.add(i+"");
                 }
             }else{
                 dias.add("na");
-                for (int i=0; i<=28; i++){
+                for (int i=1; i<=28; i++){
                     dias.add(i+"");
                 }
             }
@@ -240,7 +240,8 @@ public class VisualiceActivity extends AppCompatActivity {
             if (this.day=="na"){
                 gastos=bd.obtenerGasto(aux,this.month,this.year);
             }else{
-                gastos=bd.obtenerGasto(aux,this.day,this.month,this.year);
+                //gastos=bd.obtenerGasto(aux,this.day,this.month,this.year);
+                gastos=bd.obtenerGasto();
             }
         }
         catch (Exception e){

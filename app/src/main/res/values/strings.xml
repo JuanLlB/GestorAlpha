@@ -44,4 +44,6 @@
     <string name="NuevoUsuario">Inserta los datos del nuevo usuario</string>
     <string name="Modificar">Modificar</string>
     <string name="Borrar">Borrar</string>
+    <string name="FechaM">¿Poner fecha de manera manual?</string>
+    <string name="Activar">Activar</string>
 </resources>

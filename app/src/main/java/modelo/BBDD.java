@@ -78,6 +78,39 @@ public class BBDD extends SQLiteOpenHelper {
         bd.close();
     }
 
+    public ArrayList<Gasto> obtenerGasto() {
+        ArrayList<Gasto> gastos = new ArrayList<Gasto>();
+
+        String sentenciaSql = "SELECT _id,cantidad,concepto,descripcion,anyo,mes,dia" +
+                "" + " FROM " + NOMBRE_TABLA_GASTOS;
+        Cursor c=null;
+        try {
+            c = bd.rawQuery(sentenciaSql, null);
+        }
+        catch (Exception e){
+            return null;
+        }
+        if (c != null && c.getCount() > 0) {
+            c.moveToFirst();
+            do {
+                int id = c.getInt(c.getColumnIndexOrThrow("_id"));
+
+
+                String cantidad = c.getString(c.getColumnIndexOrThrow("cantidad"));
+                String concepto = c.getString(c.getColumnIndexOrThrow("concepto"));
+
+                String año = c.getString(c.getColumnIndexOrThrow("anyo"));
+                String mes = c.getString(c.getColumnIndexOrThrow("mes"));
+                String dia = c.getString(c.getColumnIndexOrThrow("dia"));
+                String descripcion = c.getString(c.getColumnIndexOrThrow("descripcion"));
+                Gasto gasto = new Gasto(id, "-Punto", Double.parseDouble(cantidad), concepto, año,mes,dia, descripcion);
+                gastos.add(gasto);
+            } while (c.moveToNext());
+        }
+        c.close();
+        return gastos;
+    }
+
     public ArrayList<Gasto> obtenerGasto(String id_usuario) {
         ArrayList<Gasto> gastos = new ArrayList<Gasto>();
 
@@ -150,7 +183,7 @@ public class BBDD extends SQLiteOpenHelper {
     }
 
 
-    public ArrayList<Gasto> obtenerGasto(String id_usuario,String dia, String mes,String año) {
+    public ArrayList<Gasto> obtenerGasto(String id_usuario,String dia , String mes,String año) {
 
         ArrayList<Gasto> gastos = new ArrayList<Gasto>();
         String diaNumero=numero(dia);
