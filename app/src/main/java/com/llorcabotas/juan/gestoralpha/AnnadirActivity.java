@@ -33,6 +33,7 @@ public class AnnadirActivity extends AppCompatActivity {
 
     public BBDD bd;
     Usuario u;
+    boolean fechaHoy;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +45,7 @@ public class AnnadirActivity extends AppCompatActivity {
         bactivar=(Button) findViewById(R.id.buttonFechaM);
         cantidad=(EditText) findViewById(R.id.editTextCantidad);
         descripcion=(EditText) findViewById(R.id.editTextDescripcion);
+        fechaHoy=true;
         try {
             u = (Usuario) bundle.getSerializable("usuario");
         }
@@ -122,9 +124,21 @@ public class AnnadirActivity extends AppCompatActivity {
                     String concepto = spinnerCDG.getSelectedItem().toString();
                     //Coje la fecha de creación del gasto y lo convierte a String
                     Date d= Calendar.getInstance().getTime();
-                    String  año=String.valueOf(d.getYear());
-                    String  mes=String.valueOf(d.getMonth());
-                    String   dia= String.valueOf(d.getDay());
+                    String  año;
+                    String  mes;
+                    String  dia;
+                    //capturamos la fecha de hoy
+                    if (fechaHoy){
+                        año=String.valueOf(d.getYear());
+                        mes=String.valueOf(d.getMonth());
+                        dia= String.valueOf(d.getDay());
+                    }
+                    else{
+                        año=spinnerA.getSelectedItem().toString();
+                        mes=spinnerM.getSelectedItem().toString();
+                        dia=spinnerD.getSelectedItem().toString();
+                    }
+
                     //Creamos un nuevo gasto con los datos obtenidos
                     Gasto g = new Gasto(u.getId(), cantidad, concepto, año,mes,dia, descripciones);
                     //Insertamos el gasto en la base de datos
@@ -145,7 +159,8 @@ public class AnnadirActivity extends AppCompatActivity {
         bactivar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (spinnerD.isEnabled()){
+                fechaHoy=false;
+              /*  if (spinnerD.isEnabled()){
                     spinnerD.setEnabled(false);
                 }else{
                     spinnerD.setEnabled(true);
@@ -160,6 +175,12 @@ public class AnnadirActivity extends AppCompatActivity {
                 }else{
                     spinnerA.setEnabled(true);
                 }
+                */
+                spinnerD.setEnabled(true);
+                spinnerM.setEnabled(true);
+                spinnerA.setEnabled(true);
+
+
             }
         });
 
@@ -190,24 +211,20 @@ public class AnnadirActivity extends AppCompatActivity {
         ArrayList<String> dias = new ArrayList<String>();
         String item=month;
         if (item.equals("Enero") || item.equals("Marzo") || item.equals("Mayo") || item.equals("Julio") || item.equals("Agosto") || item.equals("Octubre") || item.equals("Diciembre")){
-            dias.add("na");
             for (int i=1; i<=31; i++){
                 dias.add(i+"");
             }
         }else if (item.equals("Abril") || item.equals("Junio") || item.equals("Septiembre") || item.equals("Noviembre")){
-            dias.add("na");
             for (int i=1; i<=30; i++){
                 dias.add(i+"");
             }
         }else if (item.equals("Febrero")){
             item=year;
             if (Integer.parseInt(item)%4==0){
-                dias.add("na");
                 for (int i=1; i<=29; i++){
                     dias.add(i+"");
                 }
             }else{
-                dias.add("na");
                 for (int i=1; i<=28; i++){
                     dias.add(i+"");
                 }

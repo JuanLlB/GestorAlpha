@@ -76,6 +76,10 @@ public class VisualiceActivity extends AppCompatActivity {
 
         spinnerD=(Spinner) findViewById(R.id.opcionesDia);
         spinnerM=(Spinner) findViewById(R.id.opcionesMes2);
+
+        Calendar fecha = Calendar.getInstance();
+        int mes = fecha.get(Calendar.MONTH) + 1;
+        spinnerM.setSelection(mes);
         spinnerA=(Spinner) findViewById(R.id.opcionesAño);
         // Adjunta datos del adapter al spinner
         spinnerD.setAdapter(myAdapterD);
@@ -190,8 +194,6 @@ public class VisualiceActivity extends AppCompatActivity {
         meses.add(getString(R.string.mes10));
         meses.add(getString(R.string.mes11));
         meses.add(getString(R.string.mes12));
-
-
         return meses;
     }
 
